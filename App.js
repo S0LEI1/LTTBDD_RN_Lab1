@@ -1,11 +1,37 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, Dimensions } from 'react-native';
+import FirstScreen from './src/screen/FirstScreen';
+import Screen1_a from './src/screen/Screen1_a';
+import Screen1_b from './src/screen/Screen1_b';
+import Screen1_c from './src/screen/Screen1_c';
+import Screen1_d from './src/screen/Screen1_d';
+import Screen1_e from './src/screen/Screen1_e';
+import Screen2_a from './src/screen/Screen2_a';
+import ScreenXMEye from './src/screen/ScreenXMEye';
 
+const width = Dimensions.get('window').width
+const height = Dimensions.get('window').height
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <ScrollView horizontal
+      >
+        <View style={styles.wrapper}><FirstScreen /></View>
+        <View style={styles.wrapper}><Screen1_a /></View>
+        <View style={styles.wrapper}><Screen1_b /></View>
+        <View style={styles.wrapper}><Screen1_c/></View>
+        <View style={styles.wrapper}><Screen1_d /></View>
+        <View style={styles.wrapper}><Screen1_e /></View>
+        <View style={styles.wrapper}><Screen2_a /></View>
+        <View style={styles.wrapper}><ScreenXMEye/></View>
+      </ScrollView>
+      {/* <View style={styles.wrapper}>
+          <Screen1_a />
+        </View>
+        <View style={styles.wrapper}>
+          <Screen1_b />
+        </View> */}
+
     </View>
   );
 }
@@ -13,8 +39,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
+  wrapper: {
+    marginHorizontal: 2
+  }
 });
